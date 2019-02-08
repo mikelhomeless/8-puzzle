@@ -31,11 +31,12 @@ class EightPuzzle:
 
     def move(self, direction):
         if is_valid_move(direction):
-            return __swap(self.__blank, MOVES[direction])
+            __swap(MOVES[direction])
+            return self.__board, self.__blank_index
         else:
             raise InvalidMoveError(direction)
 
-    def set_board(self, arr, empty_pos=None):
+    def set_gamestate(self, arr, empty_pos=None):
         self.__board = [9 if x == 'E' else x for x in board]
         self.__blank_index = __find_index_of_blank() if empty_pos == None else empty_pos
 
@@ -46,17 +47,17 @@ class EightPuzzle:
         return [k, peak(k) for k in MOVES if is_valid_move(k)]
 
     def peak(direction):
-        future_board = move(direction)
-        future_pos = self.__blank_index
-        __swap(self.blank, -MOVES[direction])
-        return future_board, future_pos
+        future_state = move(direction)
+        __swap(-MOVES[direction]) # reset board to its previous configuration
+        return future_state
 
     def __find_index_of_blank(self):
-        self.__board.index(9)
+        return self.__board.index(9)
 
-    def __swap(self, a, b):
+    def __swap(self, distance):
+        old = self.__blank_index
+        self.__blank_index += distance
         self.__board[a], self.__board[b] = self.__board[b], self.__board[a]
-        return self.board
 
     @staticmethod
     def is_solvable(board):
