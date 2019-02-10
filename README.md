@@ -9,8 +9,8 @@ Heuristic: Manhattan Distance
 Goal state: All tiles are in numerical order with the empty tile
 
 NOTE: It _is_ possible for a given board to not have a solution (in fact, half of all possible board permutations don't have
-      one). While the puzzles that _do_ have a solution will generally be solved in less than a second. Puzzles that don't have one must go through all moves (9!/2) and will therefore take much longer to complete (about 5 seconds for each unsolvable
-      puzzle)
+      one).
+      
 ## How to use
 There are two ways to use this program. The interface depends on the arguments given
 when the program is called.

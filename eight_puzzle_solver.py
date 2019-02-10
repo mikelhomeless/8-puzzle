@@ -38,7 +38,7 @@ def find_solution(board):
         else:
             print("Moves: {:.<31} steps: {:2d} solution found in: {:.3f}s\n".format(solution, len(solution), elapsed_time))
     else:
-        print('No solution was found. Took {:.3f}s to explore all states\n'.format(elapsed_time))
+        print('No solution was found.\n')
 
 # ______________________________________MAIN_______________________________________________
 try:

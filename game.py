@@ -79,3 +79,15 @@ class EightPuzzle:
         old = self.__blank_index
         self.__blank_index += distance
         self.__board[old], self.__board[self.__blank_index] = self.__board[self.__blank_index], self.__board[old]
+
+    # Uses inversions to test if a board is unsolvable.
+    # Though the agent is able to find if a puzzle is unsolvable, because it has to go through
+    # every possible state to figure it out, Unsolvable puzzles take much longer than solvable ones.
+    # Technique for using inversions to find solvalbility found here: https://www.cs.bham.ac.uk/~mdr/teaching/modules04/java2/TilesSolvability.html
+    def is_solvable(self):
+        inversions = 0
+        for index, tile in enumerate(self.__board):
+            for x in self.__board[index + 1:]:
+                if tile != 9 and tile > x:
+                    inversions += 1
+        return inversions % 2 == 0
