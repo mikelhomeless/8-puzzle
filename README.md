@@ -12,17 +12,18 @@ There are two ways to use this program. The interface depends on the arguments g
 when the program is called.
 
 ### No Arguments
-```python
+```bash
 python3 eight_puzzle_solver.py
 ```
 When starting the program with no arguments, it will prompt the user to enter the
 values of the puzzle separated by white space.
 
 For example, the following 8-puzzle configuration
-|_|_|_|
-|7|5|4|
-|3|6|2|
-|E|8|1|
+```
+7 5 4
+3 6 2
+E 8 1
+```
 
 Would be typed in as:
 ```
@@ -31,7 +32,7 @@ Would be typed in as:
 with E (or e) denoting the blank tile
 
 ### One Argument
-```python
+```bash
 python3 eight_puzzle_solver.py file_path
 ```
 Starting the program with one argument tells the program you want to load puzzles in from a file.
