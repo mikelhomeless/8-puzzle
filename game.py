@@ -79,7 +79,3 @@ class EightPuzzle:
         old = self.__blank_index
         self.__blank_index += distance
         self.__board[old], self.__board[self.__blank_index] = self.__board[self.__blank_index], self.__board[old]
-
-    # @staticmethod
-    # def is_solvable(board):
-    #     pass()

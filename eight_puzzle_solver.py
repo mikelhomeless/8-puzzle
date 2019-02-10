@@ -1,7 +1,6 @@
-import sys
 from agent import EightPuzzleAgent
 from game import EightPuzzle
-import string
+import sys
 import time
 
 class InvalidInputError(Exception):
@@ -40,6 +39,8 @@ def find_solution(board):
             print("Moves: {:.<31} steps: {:2d} solution found in: {:.3f}s\n".format(solution, len(solution), elapsed_time))
     else:
         print('No solution was found. Took {:.3f}s to explore all states\n'.format(elapsed_time))
+
+# ______________________________________MAIN_______________________________________________
 try:
     if len(sys.argv[1:]) == 0:
         board = validate_input(input("Please enter the board configuration separated by spaces: ").split())
