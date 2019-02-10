@@ -1,12 +1,16 @@
 # 8-puzzle
 
 ## Algorithm
-This program uses the A* algorithm to search for an optimal solution to a given
+This program uses the A* algorithm to search for the most optimal solution to a given
 8-puzzle.
 
 Heuristic: Manhattan Distance
 
 Goal state: All tiles are in numerical order with the empty tile
+
+NOTE: It _is_ possible for a given board to not have a solution (in fact, half of all possible board permutations don't have
+      one). While the puzzles that _do_ have a solution will generally be solved in less than a second. Puzzles that don't have one must go through all moves (9!/2) and will therefore take much longer to complete (about 5 seconds for each unsolvable
+      puzzle)
 ## How to use
 There are two ways to use this program. The interface depends on the arguments given
 when the program is called.
@@ -54,6 +58,12 @@ E 8 1
 E 6 7
 ```
 
+See the "example_puzzles.txt" file for examples
+Solve them with
+```bash
+python3 eight_puzzle_solver.py example_puzzles.txt
+```
+
 ## Reading output
 If a solution for the puzzle provided exists, a list of moves will be printed to show the
 steps found to solve.
@@ -63,7 +73,6 @@ u = up
 d = down
 
 Each step represents the direction the empty tile would need to be moved to reach the next state
-
 Example:
 We start with the following puzzle
 ```
