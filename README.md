@@ -19,10 +19,11 @@ When starting the program with no arguments, it will prompt the user to enter th
 values of the puzzle separated by white space.
 
 For example, the following 8-puzzle configuration
-|_|_|_|
-|7|5|4|
-|3|6|2|
-|E|8|1|
+```
+7 5 4
+3 6 2
+E 8 1
+```
 
 Would be typed in as:
 ```
