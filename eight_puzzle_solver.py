@@ -32,7 +32,7 @@ def find_solution(board):
     start_time = time.time()
     solution = agent.solve()
     elapsed_time = time.time() - start_time
-    if solution:
+    if solution != None:
         if len(solution) == 0:
             print("Puzzle is already solved\n")
         else:
