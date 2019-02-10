@@ -6,7 +6,7 @@ This program uses the A* algorithm to search for the most optimal solution to a 
 
 Heuristic: Manhattan Distance
 
-Goal state: All tiles are in numerical order with the empty tile
+Goal state: All tiles are in numerical order with the empty tile in the lower right-hand corner
 
 NOTE: It _is_ possible for a given board to not have a solution (in fact, half of all possible board permutations don't have
       one).
