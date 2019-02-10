@@ -32,15 +32,15 @@ class EightPuzzle:
     def move(self, direction):
         if is_valid_move(direction):
             __swap(MOVES[direction])
-            return self.__board, self.__blank_index
+            return self.__board[:], self.__blank_index
         else:
             raise InvalidMoveError(direction)
 
-    def set_gamestate(self, arr, empty_pos=None):
+    def set_gamestate(self, board, empty_pos=None):
         self.__board = [9 if x == 'E' else x for x in board]
         self.__blank_index = __find_index_of_blank() if empty_pos == None else empty_pos
 
-    def is_solution(self):
+    def is_solved(self):
         return all([a < b for a,b in zip(self.__board, self.__board[1:])])
 
     def get_available_moves(self):
