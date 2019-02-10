@@ -14,6 +14,9 @@ class EightPuzzleAgent:
 
         If the queue is emptied, all possible states have been explored and no solution exists
         """
+        # Return if game is already solved
+        if self.__game.is_solved():
+            return ''
         self.queue_moves(self.__game.get_available_moves(), '')
         while self.__queue:
             priority, game_state, history = heappop(self.__queue)
@@ -22,7 +25,7 @@ class EightPuzzleAgent:
                 return history
             self.queue_moves(self.__game.get_available_moves(), history)
 
-        return False
+        return None
 
     def queue_moves(self, moves_list, move_history):
         """Push potential moves into the queue to be explored
