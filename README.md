@@ -67,10 +67,10 @@ python3 eight_puzzle_solver.py example_puzzles.txt
 ## Reading output
 If a solution for the puzzle provided exists, a list of moves will be printed to show the
 steps found to solve.
-r = right
-l = left
-u = up
-d = down
+- r = right
+- l = left
+- u = up
+- d = down
 
 Each step represents the direction the empty tile would need to be moved to reach the next state
 Example:
