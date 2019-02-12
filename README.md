@@ -1,4 +1,4 @@
-# 8-puzzle
+# 8-puzzle - AI
 
 ## Algorithm
 This program uses the A* algorithm to search for the most optimal solution to a given
